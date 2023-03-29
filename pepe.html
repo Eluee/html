@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>이미지 클릭 움짤 효과</title>
+    <style>
+      /* 이미지 움짤 반복 재생을 위한 CSS */
+      @keyframes play {
+        from {
+          background-position: 0;
+        }
+        to {
+          background-position: -3000px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 클릭 시 움짤이 나타나는 JavaScript -->
+    <script>
+      document.addEventListener("click", function (e) {
+        var div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.width = "150px"; /* 이미지 크기 */
+        div.style.height = "150px";
+        div.style.left = e.pageX - 75 + "px"; /* 가운데 위치 조정 */
+        div.style.top = e.pageY - 75 + "px"; /* 가운데 위치 조정 */
+        div.style.backgroundImage =
+          "url('http://upload2.inven.co.kr/upload/2020/02/22/bbs/i13826935592.gif')";
+        div.style.backgroundSize = "auto 150px";
+        div.style.animation = "play 1s steps(20) infinite";
+        document.body.appendChild(div);
+      });
+    </script>
+  </body>
+</html>
