@@ -1,38 +1,59 @@
 <!DOCTYPE html>
+<!-- HTML5 문서 유형 선언 -->
 <head>
   <title>예제 1-8 폼태그</title>
+  <!-- 웹 페이지 제목 -->
   <meta charset="utf-8" />
+  <!-- 문자 인코딩 설정 -->
   <meta name="keyword" content="HTML CSS Web3D" />
+  <!-- 검색 엔진 최적화를 위한 키워드 지정 -->
   <meta name="author" content="박경배" />
+  <!-- 작성자 정보 지정 -->
   <meta name="description" content="html5&Web3D 강좌" />
+  <!-- 웹 페이지 설명 지정 -->
 </head>
 <body>
   <p>8. 폼태그</p>
-  <from action="text.jsp" method="post">
+  <!-- 문단(paragraph) 요소로, 문서 내용을 담음 -->
+  <form action="text.jsp" method="post">
+    <!-- 폼(form) 요소로, 폼 데이터를 전송하기 위한 요소들을 감싸고 있음 -->
     <label for="fname">이름</label>
+    <!-- 레이블(label) 요소로, 폼 요소와 관련된 텍스트를 지정하며, for 속성은 해당 폼 요소의 id 속성과 연결 -->
     <input type="text" id="fname" name="fname" /><br />
+    <!-- 입력 요소(input)로, type 속성은 입력 요소의 종류를 지정하며, id와 name 속성은 해당 요소를 구분하기 위한 식별자 -->
     <label for="lname">암호:</label>
     <input type="password" /> <br />
+    <!-- type 속성이 password인 입력 요소로, 입력 내용이 가려짐 -->
     라디오버튼: <input type="radio" value="남성" />
     <input type="radio" value="여성" />
     <input type="radio" value="아동" /><br />
+    <!-- type 속성이 radio인 입력 요소로, 같은 이름(name)을 갖는 요소들 중 하나만 선택할 수 있음 -->
     체크박스:<input type="checkbox" value="남성" />
     <input type="checkbox" value="여성" />
     <input type="checkbox" value="아동" /><br />
+    <!-- type 속성이 checkbox인 입력 요소로, 다중 선택 가능 -->
     버튼: <input type="button" value="Click Me!" /> Select:<select
       id="cars"
       name="cars"
     >
+      <!-- select 요소로, 선택 가능한 목록을 생성 -->
       <option value="volvo">Volvo</option>
+      <!-- option 요소로, 선택 가능한 목록의 각 항목을 지정하며, value 속성은 선택된 값으로, 텍스트 내용은 사용자에게 보여질 내용으로 지정 -->
       <option value="saab">Saab</option>
       <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option></select
-    ><br />
+      <option value="audi">Audi</option>
+    </select><br />
+    <!-- select 요소의 끝 -->
     <textarea name="message" rows="10" cols="30">
     문의 사항을 입력하세요...
     </textarea>
+    <!-- textarea 요소로, 여러 줄의 텍스트 입력을 받음 -->
     <p></p>
     <input type="submit" value="Submit" />
+    <!-- type 속성이 submit인 버튼으로, 폼 데이터를 전송 -->
     <input type="reset" value="취소" />
-  </from>
+    <!-- type 속성이 reset인 버튼으로, 입력 내용을 초기화 -->
+  </form>
+  <!-- 폼 요소의 끝 -->
 </body>
+<!-- 문서 끝 -->
