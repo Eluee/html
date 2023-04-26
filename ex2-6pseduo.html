@@ -1,0 +1,30 @@
+<!DOCTYPE html> <!-- HTML5 버전 사용 선언 -->
+<html>  <!-- HTML 문서 시작 -->
+  <head> <!-- 문서의 머릿말 태그 -->
+    <title>예제2-6 의사선택자</title> <!-- 문서의 제목 정의 -->
+    <meta charset="utf-8"> <!-- 문자 인코딩 방식을 지정하는 메타 태그 -->
+    <link type="text/css" rel="stylesheet" href="ex2-1color.css"> <!-- 외부 스타일 시트 연결 -->
+     <!-- 인라인 스타일 시트 -->
+    <style>
+      /* a 태그의 기본 상태에서 글자 색상을 금색으로 지정 */
+      a:link {
+        color: gold;
+      }
+      /* a 태그가 방문한 상태에서 배경 색상을 은색으로 지정 */
+      a:visited {
+        background-color: silver;
+      }
+      /* a 태그에 마우스 커서가 올라갔을 때 글자 크기를 25px로 지정 */
+      a:hover {
+        font-size: 25px;
+      }
+    </style>
+  </head> <!-- 머릿말 태그 닫기 -->
+  <body> <!-- HTML 문서의 본문 시작 -->
+    <h1 class="first">div와 iframe</h1> <!-- class 속성이 "first"인 h1 태그의 글자 색상을 빨간색으로 지정 -->
+    <a href="#">하이퍼링크</a><br> <!-- 하이퍼링크를 나타내는 a 태그 -->
+    <a href="#">의사선택자</a><br> <!-- 하이퍼링크를 나타내는 a 태그 -->
+    <a href="#">CSS</a><br> <!-- 하이퍼링크를 나타내는 a 태그 -->
+    <h1 class="second">Welcome to World Wide Web</h1> <!-- class 속성이 "second"인 h1 태그의 글자 색상을 초록색으로 지정 -->
+  </body> <!-- 본문 태그 닫기 -->
+</html> <!-- HTML 문서 종료 -->

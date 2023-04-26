@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 문서 제목 -->
+    <title>예제2-6 의사선택자</title>
+    <!-- 문자 인코딩 -->
+    <meta charset="utf-8" />
+    <!-- 외부 스타일 시트 주석 처리 -->
+    <!--<link type="text/css" rel="stylesheet" href="ex2-1color.css">-->
+    <!-- 스타일 태그 내부의 주석 -->
+    <style>
+      /* 전체 문서에 적용되는 스타일 규칙 */
+      body {
+        font: bold 14px sans-serif; /* 글꼴, 글꼴 굵기, 글꼴 크기 */
+      }
+      /* 아이디 선택자 */
+      #fr {
+        color: blue; /* 글자 색상 */
+      }
+      #se {
+        direction: rtl; /* 글씨 방향 */
+      }
+      #th {
+        letter-spacing: 10px; /* 글자 간격 */
+      }
+      #fo {
+        line-height: 30px; /* 줄의 높이 */
+        text-decoration: line-through; /* 줄 긋기 */
+      }
+      /* 클래스 선택자 */
+      .first {
+        text-align: center; /* 가운데 정렬 */
+        text-decoration: underline; /* 밑줄 긋기 */
+      }
+      .second {
+        text-decoration: overline; /* 윗줄 긋기 */
+      }
+      /* 의사 선택자 */
+      h1:first-child {
+        color: red; /* 글자 색상 */
+      }
+      h1:last-child {
+        text-transform: lowercase; /* 소문자로 변환 */
+      }
+      h1:nth-child(2n) {
+        text-shadow: 5px 10px 5px black; /* 글자 그림자 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 제목과 아이디 선택자 -->
+    <h1 id="fr">문자의 색상</h1>
+    <!-- 제목과 의사 선택자 -->
+    <h1 id="se">문자의 방향</h1>
+    <!-- 제목과 의사 선택자 -->
+    <h1 id="th">문자의 간격</h1>
+    <!-- 제목과 의사 선택자 -->
+    <h1 id="fo">문자의 줄의 높이, 취소선</h1>
+    <!-- 제목과 클래스 선택자 -->
+    <h1 class="first">문자의 수평정렬, 밑줄</h1>
+    <!-- 제목과 클래스 선택자 -->
+    <h1 class="second">문자의 장식, 윗줄</h1>
+    <!-- 제목과 의사 선택자 -->
+    <h1 id="se">문자의 들여쓰기</h1>
+    <!-- 제목과 의사 선택자 -->
+    <h1 id="ei">LETTER TRANSFORM</h1>
+    <!-- 제목과 의사 선택자 -->
+    <h1 id="ni">문자의 그림자</h1>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- HTML5 버전 사용 선언 -->
+<html>
+  <!-- HTML 문서 시작 -->
+  <head>
+    <!-- 문서의 머릿말 태그 -->
+    <title>예제2-5 아이디/클래스 선택자</title>
+    <!-- 문서의 제목 정의 -->
+    <meta charset="utf-8" />
+    <!-- 문자 인코딩 방식을 지정하는 메타 태그 -->
+    <link type="text/css" rel="stylesheet" href="ex2-1color.css" />
+    <!-- 외부 스타일 시트 연결 -->
+    <!-- 인라인 스타일 시트 -->
+    <style>
+      /* p 태그의 배경 색상을 회색으로 지정 */
+      p {
+        background-color: gray;
+      }
+
+      /* id 속성이 "menu"인 태그의 배경 색상을 파란색으로 지정 */
+      #menu {
+        background-color: blue;
+      }
+
+      /* class 속성이 "first"인 태그의 글자 색상을 빨간색으로 지정 */
+      .first {
+        color: red;
+      }
+
+      /* class 속성이 "second"인 태그의 글자 색상을 초록색으로 지정 */
+      .second {
+        color: green;
+      }
+    </style>
+  </head>
+  <!-- 머릿말 태그 닫기  -->
+  <body>
+    <!-- HTML 문서의 본문 시작 -->
+    <h1 class="first">div와 iframe</h1>
+    <!-- class 속성이 "first"인 h1 태그의 글자 색상을 빨간색으로 지정 -->
+    <div id="menu">
+      <!-- id 속성이 "menu"인 div 태그 -->
+      <p style="background-color: cyan">하이퍼링크</p>
+      <!-- p 태그의 배경 색상을 청록색으로 지정 -->
+    </div>
+    <h1 class="second">Welcome to World Wide Web</h1>
+    <!-- class 속성이 "second"인 h1 태그의 글자 색상을 초록색으로 지정 -->
+    <p>HTML5에 CSS3를 외부파일로 연동하기 rel="stylesheet" href="color.css"</p>
+    <!-- 텍스트를 나타내는 태그 -->
+    <h2>메뉴</h2>
+    <!-- 제목을 나타내는 태그 -->
+    <p>외부, 내부, 인라인 스타일 시트</p>
+    <!-- 텍스트를 나타내는 태그 -->
+  </body>
+  <!-- 본문 태그 닫기 -->
+</html>
+<!-- HTML 문서 종료 -->

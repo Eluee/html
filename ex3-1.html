@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web3D, VR, 가상현실, X3D, Box 만들기</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://www.x3dom.org/x3dom/release/x3dom.css"
+    />
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-1.7.2.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://www.x3dom.org/x3dom/release/x3dom.js"
+    ></script>
+  </head>
+  <body id="main">
+    <h1>HTML5에서 Web3D 구현</h1>
+    <X3D>
+      <!-- showstat='true' showLog='true' 대소문자 구분 없음 -->
+
+      <Scene>
+        <Transform translation="0 2 0">
+          <Inline url="gun.glb" />
+        </Transform>
+
+        <Shape>
+          <!-- <Box size="2 4 8"> </Box>
+          <Appearance>
+            <Material diffuseColor="1 0 0"></Material>
+            <ImageTexture url="이미지 파일 경로" />
+          </Appearance> -->
+        </Shape>
+      </Scene>
+    </X3D>
+  </body>
+</html>

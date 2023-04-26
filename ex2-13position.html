@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<title>위치설정(positioning)</title>
+<meta charset="utf-8">
+    <style>
+    /* 정적 위치(static) */
+    #stt { position:static; width:200px;height:50px;background:#ff0000; }
+    /* 상대적 위치(relative) */
+    #rlt { position:relative; width:200px;height:50px;background:#11ff00;}
+    /* 절대적 위치(absolute) */
+    #abs { position:absolute; width:200px;height:50px;background:#0000ff}
+    /* 고정된 위치(fixed) */
+    #fxd { position:fixed; width:200px;height:50px;background:#00ffff} 
+    </style>
+<body>
+    <!-- 정적 위치(static) -->
+    <p id="stt" style="top:50px;">position:static</p>
+    <!-- 상대적 위치(relative) -->
+    <div id="rlt" style="top:25px; left:50px;">position:relative</div>
+    <!-- 절대적 위치(absolute) -->
+    <p id="abs" style="right:150px; top:200px;">position:absolute; </p>
+    <!-- 고정된 위치(fixed) -->
+    <div id="fxd" style="top:0px;right:0px;">position:fixed; </div>
+</body>
+</html>
