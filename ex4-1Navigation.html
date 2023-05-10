@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-1.7.2.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://www.x3dom.org/x3dom/release/x3dom.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://www.x3dom.org/x3dom/release/x3dom.css"
+    />
+    <title>항해설정</title>
+  </head>
+  <body id="main">
+    <p>
+      type='"walk" "any"' headLight='true avatarSize='"0.25 1.8 0.75"' speed='3'
+      visiblityLimit='0.0'
+    </p>
+    <X3D width="100%" height="640px"
+      ><!--showStat='true' showLog='true'-->
+      <Scene>
+        <NavigationInfo
+          type="'walk' 'any'"
+          headLight="true"
+          avatarSize="'0.25 1.8 0.75'"
+          speed="3"
+          visiblityLimit="0.0"
+        ></NavigationInfo>
+        <Transform translation="-2 0 0">
+          <Shape>
+            <Box size="2 2 2"></Box>
+            <Appearance>
+              <Material diffusecolor="0.6 0 0"></Material>
+            </Appearance>
+          </Shape>
+        </Transform>
+        <Transform translation="2 0 0">
+          <Shape>
+            <Box size="2 2 2"></Box>
+            <Appearance>
+              <Material diffusecolor="0 0 1"> </Material>
+            </Appearance>
+          </Shape>
+        </Transform>
+      </Scene>
+    </X3D>
+  </body>
+</html>

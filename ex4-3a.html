@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <title>원기둥(Cylinder)만들기, Web3D, VR, 가상현실, X3D</title>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-1.7.2.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://www.x3dom.org/x3dom/release/x3dom.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://www.x3dom.org/x3dom/release/x3dom.css"
+    />
+  </head>
+  <body id="main">
+    <X3D>
+      <!-- showStat='true' showLog='true'-->
+      <Scene>
+        <Shape>
+          <Cone bottomRadius="2" height="4" side="false" solid="false"></Cone>
+          <Appearance><Material diffuseColor="0 0 1"></Material></Appearance>
+        </Shape>
+      </Scene>
+    </X3D>
+  </body>
+</html>
