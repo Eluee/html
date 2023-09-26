@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>Transform 노드의 center,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet'type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>Transform 노드의 center</p>
+<x3d><scene>
+<Transform translation='0 0 0' rotation='0 0 1 0' center='0 0 0'>
+ <shape> <cylinder height='4'></cylinder>
+  <appearance><material diffuseColor='1 0 0'></material></appearance>
+ </shape></Transform >
+ <Transform translation='0 0 0' rotation='0 0 1 1.57' center='1 0 0'>
+ <shape> <cylinder height='4'></cylinder>
+  <appearance><material diffuseColor='0 1 0'></material></appearance>
+ </shape></Transform >
+ <Transform translation='0 0 0' rotation='0 0 1 1.57' center='-1 0 0'>
+ <shape> <cylinder height='4'></cylinder>
+  <appearance><material diffuseColor='0 0 1'></material></appearance>
+ </shape></Transform >
+</scene></x3d> 
+</body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>요소찾기(Find Element,Web3D,VR,가상현실,X3D,</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+<script>
+function changeTitle(){
+ document.getElementsByTagName("h1")[0].innerHTML = 'getElementsByTagName';}
+function light_toggle(){
+ var light = document.getElementById('nav');
+  if( light.headlight == 'false') document.getElementById('nav').headlight = 'true';
+ else document.getElementById('nav').headlight = 'false';
+} 
+</script>
+</head>
+<body id='main'>
+<h1 id='title' style="text-align:center;">요소찾기(Find Element)</h1>
+<input type='button' id='bt' value="change_title" onclick="changeTitle();"></button>
+<input type='button' id='bt' value="change_headlight" onclick="light_toggle();"></button>
+<x3d><scene>
+<navigationInfo id='nav' headlight='false' type='"walk" "Any"'></navigationInfo>
+<background skyAngle='0 3.14' skyColor='.8 .8 .8 0.6 0.6 0.6'></background>
+<directionalLight id='dir' direction='0 -10 0' color='1 1 1' on='true'></directionalLight> 
+	<transform translation='0 0 0'>		
+    	<shape><sphere onclick="light_toggle();"></sphere>
+		<appearance><material diffuseColor='1 0 0'></material></appearance>
+		</shape></transform>
+    </scene></x3d> 
+</body></html>

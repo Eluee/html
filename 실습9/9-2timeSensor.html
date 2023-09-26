@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>TIMESensor,Web3D,VR,가상현실,X3D,</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<h1 style="text-align:center;">TIMESensor</h1>
+<x3d><scene>
+	<navigationInfo headlight='false' type='"walk" "Any"'></navigationInfo>   
+	<background skyAngle='0 3.14' skyColor='.8 .8 .8 0.6 0.6 0.6'></background>
+	<transform id='trs' translation='-2 0 0'>	
+        <directionalLight id='dir01' color='1 1 0' direction='-2 0 -5' on='true'>
+	</directionalLight>	
+    	<shape><sphere radius='1'></sphere>
+		<appearance><material diffuseColor='1 1 0'></material>
+	</appearance></shape></transform>
+	<transform translation='2 0 -5'>	
+	<directionalLight id='dir02' color='1 0 1' direction='0 0 -5' on='true'>
+	</directionalLight>	
+    	<shape><box></box>
+		<appearance><material diffuseColor='1 0 1'></material>
+	</appearance></shape></transform>
+	<timeSensor id="time01" loop='true' cyleInterval='3'></timeSensor>
+	<timeSensor id="time02" loop='true' cyleInterval='1'></timeSensor>
+<route fromNode='time01' fromField='fraction_changed' toNode='dir01' toField='intensity'>
+</route>
+<route fromNode='time02' fromField='fraction_changed' toNode='dir02' toField='intensity'>
+</route>
+    </scenee></x3d> 
+</body></html>
+	

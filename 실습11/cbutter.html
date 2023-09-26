@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+    <title>Color Butterfly,Web3D,VR,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>Color Butterfly</p>
+<X3D> <!--showStat='true' showLog='true' -->
+   <Scene>
+   <Transform id='left_w'translation='-.1 0 0'>
+    	<Shape>
+		<IndexedFaceSet coordindex='0 1 2 3 4 5 6 7 8 9 10 11 -1' solid='false'
+		creaseAngle='2'>
+		<Coordinate point='0 -.38 0, 0 .38 0, -.2 .85 0, -.71 1 0, -.92 .92 0
+	                   -1 .4 0, -.51 .2 0, -.28 .15 0 , -.71 -.38 0 , -.75 -.75 0,
+					   -.38 -.92 0,  -.15 -.71 0'></Coordinate>
+		</IndexedFaceSet>
+		<Appearance><Material diffuseColor='1 0 1'></Material></Appearance>
+		</Shape></Transform>
+	<Transform id='right_w' translation='.1 0 0'>
+		<Shape>
+		<IndexedFaceSet coordindex='0 1 2 3 4 5 6 7 8 9 10 11 -1' solid='false'
+		creaseAngle='2'>
+		<Coordinate point='0 -.38 0, 0 .38 0, .2 .85 0, .71 1 0, .92 .92 0
+	                   1 .4 0, .51 .2 0, .28 .15 0 , .71 -.38 0 , .75 -.75 0,
+					   .38 -.92 0,  .15 -.71 0'></Coordinate>
+		</IndexedFaceSet>
+		<Appearance><Material diffuseColor='1 0 1'></Material></Appearance>
+		</Shape>
+	</Transform>
+	<TimeSensor DEF='time' cycleInterval='.5' loop='true'></TimeSensor>
+	<OrientationInterpolator DEF='oriL' key='0 1' keyValue='0 1 0 -1, 0 1 0 1'></OrientationInterpolator>
+    <OrientationInterpolator DEF='oriR' key='0 1' keyValue='0 1 0 1, 0 1 0 -1'></OrientationInterpolator>
+	<Route fromNode='time' fromField='fraction_changed' toNode='oriL' toField='set_fraction'></Route>
+	<Route fromNode='time' fromField='fraction_changed' toNode='oriR' toField='set_fraction'></Route>
+	<Route fromNode='oriL' fromField='value_changed' toNode='left_w' toField='rotation'></Route>
+	<Route fromNode='oriR' fromField='value_changed' toNode='right_w' toField='rotation'></Route>
+    </Scene>		
+</X3D>
+</body>
+</html>
+	

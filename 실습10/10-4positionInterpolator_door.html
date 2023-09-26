@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>PositionInterpolator-Open Door,Web3D,VR,가상현실,X3D,</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<h1 style="text-align:center;">PositionInterpolator-Open Door</h1>
+
+<x3d> <!--showStat='true' showLog='true' -->
+    <scene>
+	<navigationInfo headlight='true' type='"examine" "Any"'></navigationInfo>   
+	<background skyAngle='0 3.14' skyColor='.8 .8 .8 0.6 0.6 0.6'></background>
+	<transform id='left' translation='-1 0 0'>	
+        <shape def='box'><box size='2 4 .1'></box>
+		<appearance><material diffuseColor='1 .4 .4'></material></appearance>
+		</shape>
+		<touchSensor id='touch'></touchSensor></transform>
+	<transform id='right' translation='1 0 0'><shape use='box'></shape></transform>		
+	<positionInterpolator id='posint1' key='0 1' keyvalue='-1 0 0 -2 0 0'/>
+	<positionInterpolator id='posint2' key='0 1' keyvalue='1 0 0 2 0 0'/>
+	<timeSensor id='time1' cycleInterval='2' loop='false'></timeSensor>
+	<timeSensor id='time2' cycleInterval='2' loop='false'></timeSensor>
+	<route fromNode='touch' fromField='touchTime' toNode='time1' toField='startTime'></route>
+	<route fromNode='touch' fromField='touchTime' toNode='time2' toField='startTime'></route>
+	<route fromNode='time1' fromField='fraction_changed' toNode='posint1' toField='set_fraction'></route>
+	<route fromNode='posint1' fromField='value_changed' toNode='left' toField='translation'></route>
+	<route fromNode='time2' fromField='fraction_changed' toNode='posint2' toField='set_fraction'></route>
+	<route fromNode='posint2' fromField='value_changed' toNode='right' toField='translation'></route>
+	</scene>		
+</x3d>
+</body>
+</html>		

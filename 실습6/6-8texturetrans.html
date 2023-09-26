@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>TextureTransform 노드-translatio,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>TextureTransform 노드-translation</p>
+<x3d><!-- showStat='true' showLog='true' -->
+
+<scene>
+<Transform translation='-3 0 0'>
+	<shape><box></box>
+	 <appearance><ImageTexture url="../img/cloud.png"></ImageTexture>
+	  <textureTransform translation='.5 .5'></textureTransform>
+	 </appearance></shape></Transform>
+<Transform translation='-1 0 0'>
+	<shape><box></box>
+	 <appearance><imagetexture url="../img/cloud.png" ></ImageTexture>
+	  <textureTransform translation='.1 .9'></textureTransform>
+	 </appearance></shape></Transform>
+<Transform translation='1 0 0'>
+	<shape><box></box>
+	 <appearance><imagetexture url="../img/cloud.png"></ImageTexture>
+	  <textureTransform translation='.9 .1'></textureTransform>
+	 </appearance></shape></Transform>
+<Transform translation='3 0 0'>
+	<shape><box></box>
+	 <appearance><imagetexture url="../img/cloud.png"></ImageTexture>
+	  <textureTransform translation='.4 .6'></textureTransform>
+	 </appearance></shape></Transform>
+</scene></x3d> 
+</body></html>
+		

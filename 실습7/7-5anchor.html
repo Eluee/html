@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>Anchor 노드,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet'type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>Anchor 노드</p>
+
+<x3d> <!--showStat='true' showLog='true' -->
+     <scene>
+	<Anchor description="Web3D로 이동할까요?" url="http://www.web3d.org" parameter="target=_self">
+	<transform translation='-2 0 0'>
+	<shape><box size='2 2 2'/></box>
+	<appearance><material diffusecolor='0.6 0.35 0.0'></material></appearance>
+	</shape></transform>
+	</anchor>
+    <Anchor description='viewpoint' url="viewpoint.html" parameter="target=_blank">
+	<transform translation='2 0 0'>
+	<shape><box size='2 2 2'/></box>
+	<appearance><material diffusecolor='0 0 1'></material></appearance>
+	</shape></transform>
+	</anchor>		
+</scene></x3d>
+</body>
+</html>		

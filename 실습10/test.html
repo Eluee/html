@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>ButterFly, Web3D,VR,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src="http://www.x3dom.org/x3dom/release/x3dom.js"></script>
+<link rel='stylesheet' type='text/css' href="http://www.x3dom.org/x3dom/release/x3dom.css"/>
+</head>
+<body id='main'>
+<h3 style="text-align:center;"> 나비 애니메이션</h3>
+<X3D> <Scene>
+ <Transform DEF='butterFly01' translation='0 1.2 0' rotation='1 0 0 0' scale='1 1 1'>
+ </Transform> <!--나비 몸통 -->
+ <!-- 추가 부분  시작 -->
+ <TimeSensor DEF='time' cycleInterval='.5' loop='true'></TimeSensor>
+ <OrientationInterpolator DEF='oriL' key='0 1' keyValue='0 1 0 -1, 0 1 0 1'>
+ </OrientationInterpolator>
+ <OrientationInterpolator DEF='oriR' key='0 1' keyValue='0 1 0 1, 0 1 0 -1'>
+ </OrientationInterpolator>
+  <ROUTE fromNode='time' fromField='fraction_changed'
+  	 toNode='oriL' toField='set_fraction'></ROUTE>
+   <ROUTE fromNode='time' fromField='fraction_changed'
+  	 toNode='oriR' toField='set_fraction'></ROUTE>
+   <ROUTE fromNode='oriL' fromField='value_changed'
+	 toNode='b_left' toField='rotation'></ROUTE>
+    <ROUTE fromNode='oriR' fromField='value_changed' 
+	toNode='b_right' toField='rotation'></ROUTE>
+ <!-- 추가 부분  끝 -->
+</Scenee></X3D></body></html>
+
+
+
+
+
+
+
+
+
+
+

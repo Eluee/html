@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'/> 
+<title>면(IndexedFacetSet) 만들기 ,Web3D,VR,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script> 
+<script type='text/javascript' src="http://www.x3dom.org/x3dom/release/x3dom.js"></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>면(IndexedFacetSet) 만들기</p>
+<x3d> <!--showStat='true' showLog='true' -->
+   <scene>
+    	<Shape>
+	<IndexedFaceSet coordindex='0 1 2 -1' solid='false'>
+		<coordinate id='pt' point='0 0 0, 0 2 0, 2 0 0'></coordinate>
+	     <Color color='1 0 0, 0 1 0, 0 0 1'>
+</Color>
+	</IndexedFaceSet>
+	<Appearance><Material diffuseColor='1 0 1'></Material></Appearance></Shape>
+    </scene>		
+</x3d>
+</body>
+</html>
+		

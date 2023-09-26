@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" 
+"http://www.web3d.org/specifications/X3D-3.1.dtd">
+<X3D profile="Immersive" version="3.1" 
+xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/X3D-3.1.xsd" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+    <Scene>
+	  <Transform DEF='butterFly01' translation='0 1.2 0' rotation='1 0 0 0' scale='1 1 1'>
+	    <Transform DEF='b_body' translation='0 .65 0'>
+    	<Shape>
+        <IndexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
+	     <Coordinate point='-.35 0 0, .35 0 0, .35 1 0, -.35 1 0'></Coordinate>
+		 <TextureCoordinate texcoordIndex='0 1 2 3 -1' point='0 0, 1 0,1 1, 0 1'></TextureCoordinate>
+        </IndexedFaceSet>
+		<Appearance><ImageTexture url='img/butter_body2.gif'></ImageTexture>
+       </Shape></Transform>
+	   <Transform DEF='b_left' translaton='0 0 0' center='-.25 0 0' rotation='0 1 0 0'>
+    	<Shape>
+        <IndexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
+	     <Coordinate point='-1.15 0 0, -.15 0 0, -.15 2 0, -1.15 2 0'></Coordinate>
+		 <TextureCoordinate texcoordIndex='0 1 2 3 -1' point='0 0, 1 0,1 1, 0 1'></TextureCoordinate>
+        </IndexedFaceSet>
+		<Appearance><ImageTexture url='img/butter_left2.gif'></ImageTexture>
+       </Shape></Transform>
+	   <Transform DEF='b_right' translation='0 0 0' center='.25 0 0' rotation='0 1 0 0'>
+    	<Shape>
+        <IndexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
+	     <Coordinate point='.15 0 0, 1.15 0 0, 1.15 2 0, .15 2 0'></Coordinate>
+		 <TextureCoordinate texcoordIndex='0 1 2 3 -1' point='0 0, 1 0,1 1, 0 1'></TextureCoordinate>
+        </IndexedFaceSet>
+		<Appearance><ImageTexture url='img/butter_right2.gif'></ImageTexture>
+         </Shape></Transform>
+	   </Transform> 
+	   <TimeSensor DEF='time' cycleInterval='.5' loop='true'></TimeSensor>
+	   <OrientationInterpolator DEF='oriL' key='0 1' keyValue='0 1 0 -1, 0 1 0 1'></OrientationInterpolator>
+       <OrientationInterpolator DEF='oriR' key='0 1' keyValue='0 1 0 1, 0 1 0 -1'></OrientationInterpolator>
+	   <ROUTE fromNode='time' fromField='fraction_changed' toNode='oriL' toField='set_fraction'></ROUTE>
+	   <ROUTE fromNode='time' fromField='fraction_changed' toNode='oriR' toField='set_fraction'></ROUTE>
+	   <ROUTE fromNode='oriL' fromField='value_changed' toNode='b_left' toField='rotation'></ROUTE>
+	   <ROUTE fromNode='oriR' fromField='value_changed' toNode='b_right' toField='rotation'></ROUTE>
+	</Scene>		
+</X3D>

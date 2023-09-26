@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+<title>get,setAttribute,Web3D,VR,가상현실,X3D,</title>
+</head>
+<body id='main'>
+<h1 style="text-align:center;">onmouseMove()</h1>
+<p style="text-align:center;"> 마우스 이동
+<p id='valueC' style="text-align:center;"></p>
+<x3d > <!--showStat='true' showLog='true' -->
+    <scene>
+		<transform id='target' scale='0.5 0.5 0.5' center='0 0 0'>
+			<shape><cone></cone>
+			<appearance><material id='mat' diffuseColor='1 1 1'></material>
+			</appearance></shape></transform>
+		<positionChaser id='pc' duration="1.5" initialDestination="0 -1 0" initialValue="0 0 0">
+		</positionChaser>
+		<orientationChaser id='oc' duration="1.5" initialDestination="0 0 1 0" initialValue="0 0 1 0.75" >
+		</orientationChaser>
+		<colorChaser id='cc' duration="1.5" initialDestination="1 1 1" initialValue="1 1 1" >
+		</colorChaser>
+        
+		<route fromNode='pc' fromField='value_changed' toNode='target' toField='translation'></route>
+		<route fromNode='oc' fromField='value_changed' toNode='target' toField='rotation'></route>
+		<route fromNode='cc' fromField='value_changed' toNode='mat' toField='diffuseColor'></route>
+        
+        <transform translation='-2.5 0 0' rotation='0 1 0 0.785'' onmousemove=
+				"document.getElementById('pc').setAttribute('set_destination', event.hitPnt);
+                document.getElementById('oc').setAttribute('set_destination', '0.86 0.36 -0.36 1.71');
+				document.getElementById('cc').setAttribute('set_destination', '1 0 0');">
+          <shape ><box size='3 3 0.01'></box>
+            <appearance><material diffuseColor='1 0 0'></material>
+        </appearance></shape></transform>
+        <transform rotation='0 1 0 -0.785' translation='2.5 0 0'
+				onmousemove="document.getElementById('pc').setAttribute('set_destination', event.hitPnt);
+				document.getElementById('oc').setAttribute('set_destination', '0.86 -0.36 0.36 1.71');
+				document.getElementById('cc').setAttribute('set_destination', '0 1 0');">
+          <shape><box size='3 3 0.01'></box>
+            <appearance>
+              <material diffuseColor='0 1 0' ></material>
+        </appearance></shape></transform>
+		<transform translation='0 -2 0' rotation='1 0 0 .345'
+		onmousemove="document.getElementById('pc').setAttribute('set_destination', event.hitPnt);
+				document.getElementById('oc').setAttribute('set_destination', '0 0 1 0');
+				document.getElementById('cc').setAttribute('set_destination', '0 0 1');">
+          <shape><box size='3 0.01 3'></box>
+            <appearance>
+              <material diffuseColor='0 0 1' ></material>
+        </appearance></shape></transform>
+</scene></x3d></body></html>
+	

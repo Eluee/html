@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>TextureCoordinate,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>TextureCoordinate</p>
+<x3d><!-- showStat='true' showLog='true' -->
+<scene>
+<Transform translation='-3 0 0'>
+	<shape>
+	<IndexedFaceSet coordindex='0 1 2 3 -1' solid='false'>
+	<coordinate  point='0 0 0, 2 0 0, 2 2 0, 0 2 0'/></coordinate>
+	</IndexedFaceSet>
+	<appearance def='img'><ImageTexture url="../img/cloud.png">
+	</ImageTexture></appearance></shape></Transform>
+<Transform translation='0 0 0'>
+  <shape><IndexedFaceSet coordindex='0 1 2 3 -1' solid='false'>
+  <coordinate point='0 0 0, 2 0 0, 2 2 0, 0 2 0'></coordinate>
+  <textureCoordinate texCoordindex='0 1 2 3 -1' point='0 0, 0.5 0, 1 1, 0 0.5'>
+ </textureCoordinate></IndexedFaceSet>
+  <appearance use='img'></appearance></shape></Transform>
+<Transform translation='3 0 0'>
+  <shape><IndexedFaceSet coordindex='0 1 2 3 -1' solid='false'>
+  <coordinate point='0 0 0, 2 0 0, 2 2 0, 0 2 0'></coordinate>
+  <textureCoordinate texCoordindex='0 1 2 3 -1' point='1 1, 0 0.5, 0 0, 0.5 0'>
+   </textureCoordinate></IndexedFaceSet>
+	 <appearance use='img'></appearance></shape></Transform>
+</scene></x3d> 
+</body></html>
+	

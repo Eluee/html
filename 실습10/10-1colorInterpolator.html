@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>ColorInterpolator,Web3D,VR,가상현실,X3D,</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<h1 style="text-align:center;">ColorInterpolator</h1>
+<x3d> <!--showStat='true' showLog='true' -->
+    <scene>
+	<navigationInfo headlight='true' type='"examine" "Any"'></navigationInfo>   
+	<background skyAngle='0 3.14' skyColor='.8 .8 .8 0.6 0.6 0.6'></background>
+	<transform translation='0 0 0'>	
+        <shape><sphere radius='1'></sphere>
+		<appearance><material id='color' diffuseColor='1 1 0'></material></appearance>
+		</shape>
+	</transform>
+	<colorInterpolator id='clrint' key='0 0.25 0.5 0.75 1' keyvalue='1 0 1, 1 1 0, 1 0 0, 0 1 0, 0 1 1'>
+	<timeSensor id='time' loop='true' cycleInterval='4'></timeSensor>
+	<route fromNode='time' fromField='fraction_changed' toNode='clrint' toField='set_fraction'></route>
+	<route fromNode='clrint' fromField='value_changed' toNode='color' toField='diffuseColor'></route>
+	</scene>		
+</x3d>
+</body>
+</html>		

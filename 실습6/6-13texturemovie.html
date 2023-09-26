@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>Movietexture노드,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src="http://www.x3dom.org/x3dom/release/x3dom.js"></script>
+<link rel='stylesheet' type='text/css' href="http://www.x3dom.org/x3dom/release/x3dom.css"/>
+</head>
+<body id='main'>
+<p>Movietexture노드</p>
+<video width="320" height="240" controls>
+  <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+</video>
+<X3D>
+<Scene><Transform translation='0 3 0'>
+ <Shape><Box size='3 2 0.1'></Box> 
+   <Appearance>
+  <Texture repeatS='false' repeatT='false'>
+  	<video src="trailer.mp4" autoplay loop='true'></video> 
+  </Texture>
+   </Appearance>
+</Shape></Transform>
+</Scene></X3D> 
+</body></html>
+
+
+
+
+

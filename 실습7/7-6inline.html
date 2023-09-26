@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>inline 노드-외부파일 링크,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet'type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>inline 노드-외부파일 링크</p>
+<x3d showStat='true' showLog='true' >
+<scene>
+	<navigationInfo headlight='true' type='"examine" "Any"'></navigationInfo> 
+	<Shape> <Box></Box><Appearance><Material diffuseColor='1 0 0'></Material></Appearance></Shape>
+	<transform translation='0 0 0'>		
+    	<inline url="bench.x3d"></inline></transform> 
+	<transform translation='-5 0 0'>		
+    	<inline url="bench.x3d"></inline></transform>
+	<transform translation='5 0 0'>		
+    	<inline url="bench.x3d"></inline></transform>
+</scene></x3d>
+</body>
+</html>		

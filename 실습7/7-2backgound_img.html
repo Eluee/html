@@ -1,0 +1,23 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>Background 노드-배경이미지 ,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet'type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>Background 노드- 배경이미지</p>
+<x3d><scene>
+ <navigationInfo type='"EXAMINE"' headlight='true'></navigationInfo>
+ <background id='bgimg' topUrl='"img/top_img.png"' bottomUrl="img/bottom_img.png" 
+		rightUrl="img/right_img.png" lefturl="img/left_img.png"
+		frontUrl='"img/front_img.png"' backUrl='"img/back_img.png"'></background>	    
+ <Transform translation='0 0 0'>
+ <shape> <cone></cone>
+  <appearance><material diffuseColor='0 1 0'></material></appearance>
+ </shape></Transform >	  
+ </scene></x3d> 
+</body></html>
+	

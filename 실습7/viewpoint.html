@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+    <title>Web3D,VR,가상현실,X3D,DEF USE사용법 </title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+	<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<x3d> <!--showStat='true' showLog='true' -->
+    <scene>
+	<viewpoint def="view01" position="0 -2 10"></viewpoint>
+	<navigationInfo type='"walk"' id="navType" headlight='true' speed='3' description="hello navigationInfo"
+	visibilityLimit='10'></navigationInfo>
+    <transform translation='-2 0 0'>
+	<shape><box size='2 2 2'/></box>
+	<appearance><material diffusecolor='0.6 0.35 0.0'></material></appearance>
+	</shape></transform>
+	<transform translation='2 0 0'>
+	<shape><box size='2 2 2'/></box>
+	<appearance><material diffusecolor='0 0 1' emissiveColor='1 0 0'></material></appearance>
+	</shape></transform>
+	<transform translation='0 0 -12'>
+	<shape><box size='2 2 2'/></box>
+	<appearance><material diffusecolor='1 0 1' emissiveColor='1 0 0'></material></appearance>
+	</shape></transform>
+	</scene></x3d>
+</body>
+</html>		

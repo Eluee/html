@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>group ,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet'type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>Group Bench</p>
+<x3d><scene>
+<Group id='bench'><Group  id='seat'> 
+	<Transform> 
+		<Shape  DEF='bar'><Box  size='4 .3 .4'></box> 
+			<Appearance  DEF='brown'> 
+				<Material  diffuseColor='0.3 0.15 0.0 '></material> 
+			</Appearance> 
+		</Shape> 
+	</Transform> 
+	<Transform  translation='0 0 -.5'><Shape  USE='bar'/></Transform> 
+	<Transform  translation='0 0 -1'><Shape  USE='bar'/></Transform> 
+	<Transform  translation='0 0 -1.5'><Shape  USE='bar'/></Transform> 
+</Group> 
+<Transform  center='0 0 -1.5' rotation='1 0 0 -2'>
+<Group  USE='seat'></group></Transform> 
+<Transform  translation='-1.5 -.5 0'> 
+	<Shape  DEF='leg'><Box  size='.4 1 .4'></box> 
+	<Appearance  USE='brown'></appearance></Shape></Transform> 
+<Transform  translation='1.5 -.5 0'><Shape  USE='leg'></shape></Transform> 
+<Transform  translation='1.5 -.5 -1.5'><Shape  USE='leg'></shape></Transform> 
+<Transform  translation='-1.5 -.5 -1.5'><Shape  USE='leg'></shape></Transform> 
+</Group><!-- bench Group -->
+<transform translation='-6 0 0'><transform use='bench'></transform></transform>
+<transform translation='6 0 0'><transform use='bench'></transform></transform>
+</scene></x3d> 
+</body></html>

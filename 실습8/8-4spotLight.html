@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>인공조명 SpottLight,Web3D,VR,가상현실,X3D,</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<h1 style="text-align:center;">SpotLight</h1>
+<button onclick="document.getElementById('nav').setAttribute('headlight','true');">
+hLight_on</button>
+<button onclick="document.getElementById('nav').setAttribute('headlight','false');">
+hLight_off</button>
+<x3d><scene>
+	<navigationInfo id='nav' headlight='false' type='"examine" "Any"'></navigationInfo>   
+	<background skyAngle='0 3.14' skyColor='0 0 0 .4 .4 .4'></background>
+	<spotLight id='spot' ambientIntensity='1' attenuation='3 .5 0' color='1 1 0' 
+	cutoffAngle='0.3'location='0 5 10' direction='0 -5 -10' on='true' radius='25'></spotLight>
+	<transform translation='0 -5 -5'>		
+    	<Shape><box></box>
+		<Appearance><material diffuseColor='1 0 0'></material></Appearance>
+		</Shape></transform>
+    <transform translation='-5 -2 -5'>		
+    	<Shape><Cone></Cone>
+		<Appearance><material diffuseColor='0 1 0'></material></Appearance>
+		</Shape></transform>	
+    <transform translation='5 -2 -5'>		
+    	<Shape><Cylinder></Cylinder>
+		<Appearance><material diffuseColor='1 1 1'></material></Appearance>
+		</Shape></transform>	
+    <transform translation='0 0 -15'>		
+    	<Shape><sphere></sphere>
+		<Appearance><material diffuseColor='1 1 0'></material></Appearance>
+		</Shape></transform>		
+</scene></x3d> 
+</body></html>

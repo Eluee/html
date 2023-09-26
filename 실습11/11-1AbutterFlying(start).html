@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+   <title>Web3D,VR,가상현실,X3D</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+	<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+	<h3 style="text-align:center;"> 나비 애미메이션</h3>
+<x3d> <!--showStat='true' showLog='true' -->
+    <scene>
+	  <transform def='butterFly01' translation='0 1.2 0' rotation='1 0 0 0' scale='1 1 1'>
+	    <transform def='b_body' translation='0 .65 0'>
+    	<Shape>
+        <indexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
+	     <coordinate point='-.35 0 0, .35 0 0, .35 1 0, -.35 1 0'></coordinate>
+		 <textureCoordinate texcoordIndex='0 1 2 3 -1' point='0 0, 1 0,1 1, 0 1'></textureCoordinate>
+        </indexedFaceSet>
+		<appearance><material diffuseColor='1 0 0'></material><imageTexture url='img/butter_body2.gif'></imageTexture>
+       </Shape></transform>
+	   <transform def='b_left' translaton='0 0 0' center='-.25 0 0' rotation='0 1 0 0'>
+    	<Shape>
+        <indexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
+	     <coordinate point='-1.15 0 0, -.15 0 0, -.15 2 0, -1.15 2 0'></coordinate>
+		 <textureCoordinate texcoordIndex='0 1 2 3 -1' point='0 0, 1 0,1 1, 0 1'></textureCoordinate>
+        </indexedFaceSet>
+		<appearance><imageTexture url='img/butter_left2.gif'></imageTexture>
+       </Shape></transform>
+	   <transform def='b_right' translation='0 0 0' center='.25 0 0' rotation='0 1 0 0'>
+    	<Shape>
+        <indexedFaceSet coordIndex='0 1 2 3 -1' solid='false'>
+	     <coordinate point='.15 0 0, 1.15 0 0, 1.15 2 0, .15 2 0'></coordinate>
+		 <textureCoordinate texcoordIndex='0 1 2 3 -1' point='0 0, 1 0,1 1, 0 1'></textureCoordinate>
+        </indexedFaceSet>
+		<appearance><imageTexture url='img/butter_right2.gif'></imageTexture>
+       </Shape></transform>
+	   </transform> 
+	   <timeSensor def='time' cycleInterval='.5' loop='true'></timeSensor>
+	   <orientationInterpolator def='oriL' key='0 1' keyValue='0 1 0 -1, 0 1 0 1'></orientationInterpolator>
+       <orientationInterpolator def='oriR' key='0 1' keyValue='0 1 0 1, 0 1 0 -1'></orientationInterpolator>
+	   <route fromNode='time' fromField='fraction_changed' toNode='oriL' toField='set_fraction'></route>
+	   <route fromNode='time' fromField='fraction_changed' toNode='oriR' toField='set_fraction'></route>
+	   <route fromNode='oriL' fromField='value_changed' toNode='b_left' toField='rotation'></route>
+	   <route fromNode='oriR' fromField='value_changed' toNode='b_right' toField='rotation'></route>
+	   <!--second butterFly -->
+	   
+    </scene>		
+</x3d>
+
+</body>
+</html>		

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>ImageTexture,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+<link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+</head>
+<body id='main'>
+<p>ImageTexture 노드</p>
+<x3d showStat='true' showLog='true' >
+    <scene>
+	  <Transform translation='-3 0 0'>
+	  <shape><box></box>
+	  <appearance><ImageTexture url="../img/x3d_256.jpg"></ImageTexture></appearance>
+	  </shape></Transform>
+      <Transform translation='-1 0 0'>
+	  <shape><cone></cone>
+	  <appearance><imagetexture url="../img/cloud.png"></ImageTexture></appearance>
+	  </shape></Transform>
+	  <Transform translation='1 0 0'>
+	  <shape><cylinder></cylinder>
+	  <appearance><imagetexture url="../img/x3d_256.jpg"></ImageTexture></appearance>
+	  </shape></Transform>
+      <Transform translation='3 0 0'>
+	  <shape><sphere></sphere>
+	  <appearance><imagetexture url="../img/cloud.png"></ImageTexture></appearance>
+	  </shape></Transform>       
+</scene></x3d>
+</body>
+</html>		

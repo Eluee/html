@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'/> 
+<title>면(IndexedFacetSet) 만들기 ,Web3D,VR,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script> 
+<script type='text/javascript' src="http://www.x3dom.org/x3dom/release/x3dom.js"></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>피라미드(pyramid) 만들기</p>
+<X3D> <!--showStat='true' showLog='true' -->
+   <Scene>
+    <Shape>
+	<IndexedFaceSet solid='false' colorPerVertex='false' ccw='false'
+				coordIndex='0 1 3 2 -1, 0 4 2 -1, 0 4 1 -1, 2 4 3 -1, 1 4 3 -1'>
+	<Coordinate point='2 0 2, -2 0 2, 2 0 -2, -2 0 -2, 0 4 0'></Coordinate>
+	<color color='1 0 0, 0 1 0, 0 0 1,1 1 0, 1 0 1'></color>
+	</IndexedFaceSet>
+	</Shape>
+   </Scene>		
+</X3D>
+</body>
+</html>  
+
+		

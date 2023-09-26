@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>인공조명 PointLight,Web3D,VR,가상현실,X3D,</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<h1 style="text-align:center;">PointLight</h1>
+<x3d><scene>
+<NavigationInfo id='nav' headlight='false' type='"examine" "Any"'></NavigationInfo>   
+<Background skyAngle='0 3.14' skyColor='0 0 0 .4 .4 .4'></Background>
+	<PointLight ambientIntensity='1' attenuation='1 0 0' color='1 1 0'
+		intensity='1' location='0 10 0'	on='true' radius='15'></PointLight>
+	<Transform translation='0 -5 -2'>		
+    		<Shape><Box></Box>
+		<Appearance><Material diffuseColor='1 0 0'></Material>
+		</Appearance></Shape></Transform>
+	<Transform translation='-2 -2 -2'>		
+    		<Shape><Cone></Cone>
+		<Appearance><Material diffuseColor='0 1 0'></Material>
+		</Appearance></Shape></Transform>	
+    	<Transform translation='2 -2 -2'>		
+    		<Shape><Cylinder></Cylinder>
+		<Appearance><Material diffuseColor='0 0 1'></Material>
+		</Appearance></Shape></Transform>	
+    	<Transform translation='0 0 -5'>		
+    		<Shape><Sphere></Sphere>
+		<Appearance><Material diffuseColor='1 1 0'></Material>
+		</Appearance></Shape></Transform>
+	
+</scene></x3d> 
+</body></html>

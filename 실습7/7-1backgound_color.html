@@ -1,0 +1,23 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>Background 노드- 색상,Web3d,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet'type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<p>Background 노드- 색상</p>
+<x3d><scene>
+ <background id='bg1' skyangle='0 0.5 1.57' skycolor='0 0 0, .6 .6 .8, .4 .4 .8'
+               groundAngle='.5 1.57' groundColor='.2 .2 .7, .5 .5 .5, .2 .2 .2'>
+ </background>
+ <background id='bg2' skyangle='0 1.57 3.14' skycolor='0 0 0, .2 .2 .2, .4 .4 .4'></background>
+ <Transform translation='0 0 0'>
+ <shape> <cone></cone>
+  <appearance><material diffuseColor='0 1 0'></material></appearance>
+ </shape></Transform >
+ </scene></x3d> 
+</body></html>
+	

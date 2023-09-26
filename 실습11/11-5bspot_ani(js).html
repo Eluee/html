@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+   <title>Animation SpotLight, Web3D,VR,가상현실,X3D</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+<script>
+	function headToggle(){ 
+		if(document.getElementById('nav').getAttribute('headlight') == 'false')	  {
+			document.getElementById('nav').setAttribute('headlight', 'true') ; 
+			document.getElementById('hd').setAttribute('value','headlight-on') ;
+		}
+			
+		else  { document.getElementById('nav').setAttribute('headlight', 'false') ;
+			document.getElementById('hd').value = 'headlight-off' ;
+		} }
+	function spotToggle(){ 
+		if(document.getElementById('Spot').getAttribute('on') == 'false') {
+			document.getElementById('Spot').setAttribute('on', 'true') ;   
+			document.getElementById('sp').value = 'spotLight-off' ;
+		}
+		else { document.getElementById('Spot').setAttribute('on', 'false') ; 
+		document.getElementById('sp').value ='spotLight-on' ;
+		} }
+	function attToggle(){ 
+		if( document.getElementById('Spot').getAttribute('attenuation') == '0 0 0') {
+			document.getElementById('Spot').setAttribute('attenuation', '2 1 0') ;   
+			document.getElementById('spat').value = 'att-weak' ;
+		}
+		else { document.getElementById('Spot').setAttribute('attenuation', '0 0 0') ; 
+		document.getElementById('spat').value ='att-strong' ;
+		} }
+	function cutoffA(){ 
+		var button ;
+		button = document.getElementById('cutAngle').value;
+		document.getElementById('Spot').setAttribute('cutOffAngle',button); 	}
+</script>
+</head>
+<body id='main'>
+	<h3 style="text-align:center;">Animation SpotLight</h3>
+	<Form id='fSpot'>
+	<input type='button' id='hd' value='headlight-off' onclick="headToggle()";/>
+	<input type='button' id='sp' value='Spotlight' onclick="spotToggle()";/>
+	<input type='button' id='spat' value='Spot strong' onclick="attToggle()";/>
+	
+	<p><label for="points">cutoffAngle (between 0 and 1):</label>
+    <input type="range" id="cutAngle" name="points" min="0" max="1" step='0.1'
+	onclick="cutoffA();"></p></form>
+<X3d> <!--showStat='true' showLog='true' -->
+    <Scene>
+	<NavigationInfo id='nav' headlight='false' type='"examine" "Any"'></NavigationInfo>   
+	<Background skyAngle='0 3.14' skyColor='.2 .2 .2 0 0 0'></Background>
+	<Viewpoint def="view01" position="-10 0 20"></Viewpoint>
+	<SpotLight id='Spot' ambientIntensity='1' attenuation='0 0 0' color='1 1 0' cutoffAngle='0.2'
+					intensity='1' location='-10 0 10' direction='0 0 -10' on='true' radius='25'></SpotLight>
+	<PointLight intensity='.4' location='-10 0 0' radius='15' attenuation='1 1 0' on='true' color='0 1 1'></PointLight>
+    <Transform translation='-10 0 -10 '><Shape><Box size='40 20 0.1'></Box>
+	<Appearance><Material diffuseColor='0 1 1'></Material></Appearance>
+	</Shape></Transform>	
+	<Transform translation='-10 0 -5'>		
+    	<Shape><Text string="Amazing HTML5&Web3D! Software Convergence Dept.">
+			<Font size='40px'></Font></Text>
+		<Appearance><Material diffuseColor='1 1 0'></Material>
+	</Appearance></Shape></Transform>
+    <TimeSensor id='time' loop='true' cycleInterval='8'></TimeSensor>
+	<PositionInterpolator id='pos' key='0 .5 1' keyValue='-10 0 -10, 10 0 -10, -10 0 -10'></PositionInterpolator>
+	<Route fromNode='time' fromField='fraction_changed' toNode='pos' toField='set_fraction'></Route> 
+	<Route fromNode='pos' fromField='value_changed' toNode='Spot' toField='direction'></Route>
+    </Scene>		
+</X3d>
+</body>
+</html>		

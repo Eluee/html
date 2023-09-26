@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>OrientationInterpolator,Web3D,VR,가상현실,X3D,</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src="http://www.x3dom.org/x3dom/release/x3dom.js"></script>
+<link rel='stylesheet' type='text/css' href="http://www.x3dom.org/x3dom/release/x3dom.css"/>
+</head>
+<body id='main'>
+<h1 style="text-align:center;">OrientationInterpolator-회전문</h1>
+<X3D><Scene>
+	<Transform translation='-2 0 0'>	
+        <Shape DEF='wall'><Box size='2 4 0.1'></Box>
+	<Appearance><Material diffuseColor='1 .7 .7'></Material></Appearance>
+	</Shape></Transform>
+	<Transform id='door' translation='0 0 0' center='1 0 0'>
+        <TouchSensor id='touch'></TouchSensor>	
+        <Shape use='wall'></Shape></Transform>
+        <Transform translation='2 0 0'><Shape use='wall'></Shape></Transform>	<OrientationInterpolator id='oriint' key='0 1' keyvalue='0 1 0 0, 0 1 0 1.57'/>
+	<TimeSensor id='time' cycleInterval='4' loop='false'></TimeSensor>
+	<ROUTE fromNode='touch' fromField='touchTime' 
+		toNode='time' 	toField='startTime'></ROUTE>
+	<ROUTE fromNode='time' fromField='fraction_changed' 
+		toNode='oriint' toField='set_fraction'></ROUTE>
+	<ROUTE fromNode='oriint' fromField='value_changed' 
+		toNode='door' toField='rotation'></ROUTE>
+</Scene></X3D></body></html>
+
+
+
+
+
+
+
+
+

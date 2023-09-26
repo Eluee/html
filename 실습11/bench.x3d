@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" 
+"http://www.web3d.org/specifications/x3d-3.1.dtd">
+<X3D profile="Immersive" version="3.1" 
+xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.1.xsd" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+<Scene> 
+<Group  DEF='seat'> 
+	<Transform> 
+		<Shape  DEF='stick'><Box  size='4 .3 .4'/> 
+			<Appearance  DEF='brown'> 
+				<Material  id='mat' diffuseColor='0.6 0.45 0.0 '/> 
+			</Appearance> 
+		</Shape> 
+	</Transform> 
+	<Transform  translation='0 0 -.5'><Shape  USE='stick'/></Transform> 
+	<Transform  translation='0 0 -1'><Shape  USE='stick'/></Transform> 
+	<Transform  translation='0 0 -1.5'><Shape  USE='stick'/></Transform> 
+</Group> 
+<Transform  center='0 0 -1.5' rotation='1 0 0 -2'><Group  USE='seat'/>
+</Transform> 
+<Transform  translation='-1.5 -.5 0'> 
+	<Shape  DEF='leg'><Box  size='.4 1 .4'/> 
+		<Appearance  USE='brown'/> 
+	</Shape> 
+</Transform> 
+<Transform  translation='1.5 -.5 0'><Shape  USE='leg'/></Transform> 
+<Transform  translation='1.5 -.5 -1.5'><Shape  USE='leg'/></Transform> 
+<Transform  translation='-1.5 -.5 -1.5'><Shape  USE='leg'/></Transform> 
+</Scene> 
+</X3D> 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+<title>PositionInterpolator,Web3D,VR,가상현실,X3D,</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'/>
+</head>
+<body id='main'>
+<h1 style="text-align:center;">PositionInterpolator</h1>
+<x3d> <!--showStat='true' showLog='true' -->
+    <scene>
+	<navigationInfo headlight='true' type='"examine" "Any"'></navigationInfo>   
+	<background skyAngle='0 3.14' skyColor='.8 .8 .8 0.6 0.6 0.6'></background>
+	<transform id='left' translation='-2 0 0'>	
+        <shape def='box'><box></box>
+		<appearance><material diffuseColor='1 .7 .7'></material></appearance>
+		</shape></transform>
+	<transform id='right' translation='2 0 0'scale='.5 .5 .5'><shape use='box'></shape></transform>		
+	<positionInterpolator id='posint1' key='0 1' keyvalue='-2 0 0 4 0 0'/>
+	<positionInterpolator id='posint2' key='0 1' keyvalue='2 0 0 -4 0 0'/>
+	<timeSensor id='time1' cycleInterval='4' loop='true'></timeSensor>
+	<timeSensor id='time2' cycleInterval='2' loop='true'></timeSensor>
+	<route fromNode='time1' fromField='fraction_changed' toNode='posint1' toField='set_fraction'></route>
+	<route fromNode='posint1' fromField='value_changed' toNode='left' toField='translation'></route>
+	<route fromNode='time2' fromField='fraction_changed' toNode='posint2' toField='set_fraction'></route>
+	<route fromNode='posint2' fromField='value_changed' toNode='right' toField='translation'></route>
+	</scene>		
+</x3d>
+</body>
+</html>		
